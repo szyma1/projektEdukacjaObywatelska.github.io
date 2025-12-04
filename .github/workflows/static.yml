@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Obywatelskie</title>
+    <style>
+    
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #f8f9fa;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            font-size: 2.2em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 1.6em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 40px 0 20px 0;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #34495e;
+            margin: 25px 0 12px 0;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .info-box {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 3px solid #3498db;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .source-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #fafbfc;
+        }
+
+        .source-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .source-description {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-bottom: 5px;
+        }
+
+        .source-link {
+            font-size: 0.85em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #f8f9fa;
+        }
+
+        nav {
+            background: white;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .nav-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #5a6c7d;
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #2c3e50;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .page {
+            display: none;
+            background: white;
+            padding: 50px;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+            min-height: 70vh;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 1.6em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 40px 0 20px 0;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #34495e;
+            margin: 25px 0 12px 0;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .card {
+            background: #fafbfc;
+            padding: 25px;
+            border-radius: 2px;
+            border-left: 3px solid #3498db;
+        }
+
+        .card.conservative {
+            border-left-color: #e74c3c;
+        }
+
+        .card.progressive {
+            border-left-color: #3498db;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.95em;
+        }
+
+        th {
+            background: #ecf0f1;
+            color: #2c3e50;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #bdc3c7;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ecf0f1;
+            vertical-align: top;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 20px;
+            background: #fafbfc;
+            border-radius: 2px;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: 600;
+            color: #2c3e50;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-top: 8px;
+            display: block;
+        }
+
+        .timeline-item {
+            padding: 15px 0;
+            border-left: 2px solid #ecf0f1;
+            padding-left: 25px;
+            margin-left: 10px;
+            position: relative;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 20px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #3498db;
+        }
+
+        .timeline-date {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .info-box {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 3px solid #3498db;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #ecf0f1;
+            color: #5a6c7d;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            border-radius: 2px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .page {
+                padding: 25px;
+            }
+            
+            .two-column,
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                gap: 15px;
+                font-size: 0.85em;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            table {
+                font-size: 0.85em;
+            }
+            
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-title">Portfolio Obywatelskie</div>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('intro')">Wprowadzenie</a></li>
+                <li><a href="#" onclick="showPage('comparison')">Porównanie</a></li>
+                <li><a href="#" onclick="showPage('process')">Przebieg pracy</a></li>
+                <li><a href="#" onclick="showPage('reflection')">Refleksje</a></li>
+                <li><a href="#" onclick="showPage('summary')">Podsumowanie</a></li>
+                <li><a href="#" onclick="showPage('sources')">Źródła</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="intro" class="page active">
+            <h1>Porównanie Grzegorza Brauna i Joanny Senyszyn</h1>
+            <p class="subtitle">Analiza programów wyborczych dwóch przeciwstawnych kandydatów na prezydenta RP</p>
+
+            <h2>Cel projektu</h2>
+            <p>Moim celem było lepsze zrozumienie poglądów i propozycji programowych dwóch wyraźnie różnych polityków: Grzegorza Brauna, związanego z prawicową Konfederacją Korony Polskiej, oraz Joanny Senyszyn z lewicowej Sojuszu Lewicy Demokratycznej. Chciałem dowiedzieć się, jakie wartości obaj reprezentują i jakie zmiany proponują jako kandydaci na prezydenta.</p>
+
+            <div class="info-box">
+                <h3>Zakres pracy</h3>
+                <p>Projekt realizowany samodzielnie w okresie od 10 października do 20 listopada 2025 roku. Praca obejmuje analizę programów wyborczych, obserwację debat, tworzenie materiałów porównawczych oraz refleksję nad procesem badawczym.</p>
+            </div>
+
+            <h2>Umiejętności rozwijane w projekcie</h2>
+            <ul>
+                <li>Analiza tekstów źródłowych i weryfikacja informacji</li>
+                <li>Tworzenie wykresów i tabel porównawczych</li>
+                <li>Krytyczne myślenie i obiektywna ocena</li>
+                <li>Synteza informacji z różnych źródeł</li>
+                <li>Prezentacja danych w przystępnej formie</li>
+            </ul>
+        </div>
+
+        <div id="comparison" class="page">
+            <h1>Porównanie kandydatów</h1>
+
+            <div class="two-column">
+                <div class="card conservative">
+                    <h3>Grzegorz Braun</h3>
+                    <div>
+                        <span class="tag">Skrajna prawica</span>
+                        <span class="tag">Nacjonalizm</span>
+                        <span class="tag">Monarchizm</span>
+                    </div>
+                    
+                    <h4 style="margin-top: 20px; font-size: 1em;">Informacje podstawowe</h4>
+                    <ul>
+                        <li>Ur. 1967 r. (58 lat)</li>
+                        <li>Reżyser filmowy, publicysta, wykładowca</li>
+                        <li>Poseł na Sejm (IX, X kadencja, 2019-2023)</li>
+                        <li>Poseł do Parlamentu Europejskiego (od 2024)</li>
+                        <li>Lider Konfederacji Korony Polskiej</li>
+                        <li>Usunięty z Konfederacji w styczniu 2025</li>
+                    </ul>
+                    
+                    <h4 style="margin-top: 20px; font-size: 1em;">Styl polityczny</h4>
+                    <p style="font-size: 0.95em;">Kontrowersyjny, konfrontacyjny, używa mocnych sloganów i radykalnej retoryki. Znany z prowokacyjnych działań i ostrych wystąpień publicznych.</p>
+                </div>
+
+                <div class="card progressive">
+                    <h3>Joanna Senyszyn</h3>
+                    <div>
+                        <span class="tag">Lewica</span>
+                        <span class="tag">Liberalizm społeczny</span>
+                        <span class="tag">Feminizm</span>
+                    </div>
+                    
+                    <h4 style="margin-top: 20px; font-size: 1em;">Informacje podstawowe</h4>
+                    <ul>
+                        <li>Ur. 1949 r. (76 lat)</li>
+                        <li>Profesor nauk ekonomicznych</li>
+                        <li>Posłanka na Sejm (IV-VI, IX kadencja, 2001-2009, 2019-2023)</li>
+                        <li>Eurodeputowana (2009-2014)</li>
+                        <li>Dawniej SLD, obecnie kandydatka niezależna</li>
+                        <li>Była dziekanem Wydziału Zarządzania UG</li>
+                    </ul>
+                    
+                    <h4 style="margin-top: 20px; font-size: 1em;">Styl polityczny</h4>
+                    <p style="font-size: 0.95em;">Elokwentna, używa ostrego języka publicystycznego, demonstracyjna w działaniach antyklerykalnych. Konsekwentna w swoich poglądach lewicowych.</p>
+                </div>
+            </div>
+
+            <h2>Poparcie wyborcze - wizualizacja</h2>
+            <div style="margin: 30px 0;">
+                <h3 style="margin-bottom: 20px;">Wyniki I tury wyborów prezydenckich 2025</h3>
+                <div style="background: #fafbfc; padding: 30px; border-radius: 2px;">
+                    <div style="margin-bottom: 30px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                            <span style="font-weight: 600;">Grzegorz Braun</span>
+                            <span style="font-weight: 600; color: #e74c3c;">6,34%</span>
+                        </div>
+                        <div style="background: #ecf0f1; height: 30px; border-radius: 2px; overflow: hidden;">
+                            <div style="background: linear-gradient(90deg, #e74c3c, #c0392b); height: 100%; width: 6.34%; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; color: white; font-size: 0.85em; font-weight: 600;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                            <span style="font-weight: 600;">Joanna Senyszyn</span>
+                            <span style="font-weight: 600; color: #3498db;">1,09%</span>
+                        </div>
+                        <div style="background: #ecf0f1; height: 30px; border-radius: 2px; overflow: hidden;">
+                            <div style="background: linear-gradient(90deg, #3498db, #2980b9); height: 100%; width: 1.09%; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; color: white; font-size: 0.85em; font-weight: 600;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 style="margin: 40px 0 20px 0;">Poziom zaufania społecznego (sondaż IBRiS)</h3>
+                <div style="background: #fafbfc; padding: 30px; border-radius: 2px;">
+                    <div style="margin-bottom: 30px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                            <span style="font-weight: 600;">Grzegorz Braun</span>
+                            <span style="font-weight: 600; color: #e74c3c;">5,9%</span>
+                        </div>
+                        <div style="background: #ecf0f1; height: 30px; border-radius: 2px; overflow: hidden;">
+                            <div style="background: linear-gradient(90deg, #e74c3c, #c0392b); height: 100%; width: 32.9%; display: flex; align-items: center; padding-left: 10px; color: white; font-size: 0.85em; font-weight: 600;">5,9%</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                            <span style="font-weight: 600;">Joanna Senyszyn</span>
+                            <span style="font-weight: 600; color: #3498db;">17,9%</span>
+                        </div>
+                        <div style="background: #ecf0f1; height: 30px; border-radius: 2px; overflow: hidden;">
+                            <div style="background: linear-gradient(90deg, #3498db, #2980b9); height: 100%; width: 100%; display: flex; align-items: center; padding-left: 10px; color: white; font-size: 0.85em; font-weight: 600;">17,9%</div>
+                        </div>
+                    </div>
+                </div>
+                <p style="font-size: 0.9em; color: #7f8c8d; margin-top: 15px;">Źródło: Sondaż IBRiS. Skala procentowa dostosowana dla czytelności - słupek Senyszyn reprezentuje 100% z wartością 17,9%.</p>
+            </div>
+
+            <h2>Doświadczenie parlamentarne</h2>
+            <div class="two-column" style="margin: 30px 0;">
+                <div style="background: #fafbfc; padding: 25px; border-radius: 2px;">
+                    <h3 style="margin-top: 0;">Braun - 6 lat w parlamencie</h3>
+                    <div style="margin-top: 20px;">
+                        <div style="margin-bottom: 15px;">
+                            <div style="font-weight: 600; margin-bottom: 5px;">Sejm RP</div>
+                            <div style="background: #ecf0f1; height: 8px; border-radius: 2px; overflow: hidden;">
+                                <div style="background: #e74c3c; height: 100%; width: 66.7%;"></div>
+                            </div>
+                            <div style="font-size: 0.85em; color: #7f8c8d; margin-top: 3px;">4 lata (2019-2023)</div>
+                        </div>
+                        <div>
+                            <div style="font-weight: 600; margin-bottom: 5px;">Parlament Europejski</div>
+                            <div style="background: #ecf0f1; height: 8px; border-radius: 2px; overflow: hidden;">
+                                <div style="background: #e74c3c; height: 100%; width: 33.3%;"></div>
+                            </div>
+                            <div style="font-size: 0.85em; color: #7f8c8d; margin-top: 3px;">~2 lata (od 2024)</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="background: #fafbfc; padding: 25px; border-radius: 2px;">
+                    <h3 style="margin-top: 0;">Senyszyn - 17 lat w parlamencie</h3>
+                    <div style="margin-top: 20px;">
+                        <div style="margin-bottom: 15px;">
+                            <div style="font-weight: 600; margin-bottom: 5px;">Sejm RP</div>
+                            <div style="background: #ecf0f1; height: 8px; border-radius: 2px; overflow: hidden;">
+                                <div style="background: #3498db; height: 100%; width: 70.6%;"></div>
+                            </div>
+                            <div style="font-size: 0.85em; color: #7f8c8d; margin-top: 3px;">12 lat (2001-2009, 2019-2023)</div>
+                        </div>
+                        <div>
+                            <div style="font-weight: 600; margin-bottom: 5px;">Parlament Europejski</div>
+                            <div style="background: #ecf0f1; height: 8px; border-radius: 2px; overflow: hidden;">
+                                <div style="background: #3498db; height: 100%; width: 29.4%;"></div>
+                            </div>
+                            <div style="font-size: 0.85em; color: #7f8c8d; margin-top: 3px;">5 lat (2009-2014)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Szczegółowe porównanie programów</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">Obszar</th>
+                        <th>Grzegorz Braun</th>
+                        <th>Joanna Senyszyn</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Gospodarka</strong></td>
+                        <td>Wolny rynek z minimalnym udziałem państwa, nacisk na obronność ekonomiczną, kontrola granic</td>
+                        <td>Większe inwestycje publiczne w edukację i zdrowie, przyjęcie euro, sprawiedliwy podział dochodów</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Edukacja</strong></td>
+                        <td>Bon edukacyjny, decyzyjność w rękach rodziców, ograniczenie "ideologii" w szkole</td>
+                        <td>Większe finansowanie szkół, zniesienie odpłatności za studia, edukacja świecka</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ochrona zdrowia</strong></td>
+                        <td>Zniesienie monopolu NFZ, konkurencja prywatna, sprzeciw wobec przymusowych szczepień</td>
+                        <td>Utrzymanie lub zwiększenie nakładów, profilaktyka, obniżenie składek dla zaszczepionych</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Rodzina</strong></td>
+                        <td>Tradycyjny model rodziny, wsparcie materialne dla rodzin wielodzietnych, ochrona życia poczętego</td>
+                        <td>Równość płci, walka z ubóstwem, polityka prorodzinna bez faworyzowania jednej religii</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Prawa obywatelskie</strong></td>
+                        <td>Silne państwo, surowe kary za przestępstwa, konserwatywny kodeks moralny, sprzeciw wobec LGBT</td>
+                        <td>Rozdział państwa od Kościoła, wolność sumienia i wyznania, obrona praw mniejszości</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Unia Europejska</strong></td>
+                        <td>Polexit - wyjście z Unii Europejskiej, obrona polskiej suwerenności</td>
+                        <td>Głębsza integracja z UE, wspólna polityka obronna, przyjęcie euro</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Kluczowe postulaty</h2>
+            <div class="two-column">
+                <div>
+                    <h3>Grzegorz Braun</h3>
+                    <ul>
+                        <li>Przygotowanie wyjścia Polski z UE (Polexit)</li>
+                        <li>Całkowity zakaz aborcji i in vitro</li>
+                        <li>Przywrócenie kary śmierci</li>
+                        <li>Intronizacja Chrystusa jako Króla Polski</li>
+                        <li>Ewolucja w kierunku ustroju monarchistycznego</li>
+                        <li>Wzmocnienie armii i obrony cywilnej</li>
+                        <li>Bon edukacyjny dla rodziców</li>
+                        <li>Ograniczenie długu zagranicznego</li>
+                        <li>Zakaz "propagandy LGBT" i parad równości</li>
+                        <li>Zniesienie monopolu NFZ w ochronie zdrowia</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Joanna Senyszyn</h3>
+                    <ul>
+                        <li>Przyjęcie wspólnej waluty euro</li>
+                        <li>Prawo wyboru kobiety w kwestii aborcji</li>
+                        <li>Całkowity rozdział państwa od Kościoła</li>
+                        <li>Równouprawnienie i prawa społeczności LGBT</li>
+                        <li>Większe finansowanie edukacji i zdrowia</li>
+                        <li>Likwidacja Senatu</li>
+                        <li>Bezpłatne szkolnictwo wyższe</li>
+                        <li>Większa sprawiedliwość społeczna</li>
+                        <li>Zniesienie przywilejów podatkowych Kościoła</li>
+                        <li>Profilaktyka zdrowotna i promocja szczepień</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Spektrum polityczne - pozycjonowanie</h2>
+            <div style="margin: 40px 0; background: #fafbfc; padding: 40px; border-radius: 2px;">
+                <div style="position: relative; height: 100px;">
+                    <div style="position: absolute; top: 50%; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #e74c3c 0%, #ecf0f1 30%, #ecf0f1 70%, #3498db 100%); border-radius: 2px;"></div>
+                    
+                    <div style="position: absolute; left: 5%; top: 0; text-align: center;">
+                        <div style="width: 12px; height: 12px; background: #e74c3c; border-radius: 50%; margin: 0 auto 10px; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.2);"></div>
+                        <div style="font-weight: 600; font-size: 0.9em; white-space: nowrap;">Braun</div>
+                        <div style="font-size: 0.8em; color: #7f8c8d;">Skrajna prawica</div>
+                    </div>
+                    
+                    <div style="position: absolute; left: 50%; top: 0; transform: translateX(-50%); text-align: center;">
+                        <div style="width: 8px; height: 8px; background: #95a5a6; border-radius: 50%; margin: 0 auto 10px;"></div>
+                        <div style="font-size: 0.85em; color: #95a5a6;">Centrum</div>
+                    </div>
+                    
+                    <div style="position: absolute; right: 5%; top: 0; text-align: center;">
+                        <div style="width: 12px; height: 12px; background: #3498db; border-radius: 50%; margin: 0 auto 10px; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.2);"></div>
+                        <div style="font-weight: 600; font-size: 0.9em; white-space: nowrap;">Senyszyn</div>
+                        <div style="font-size: 0.8em; color: #7f8c8d;">Lewica</div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Porównanie w kluczowych kwestiach</h2>
+            <div style="margin: 30px 0;">
+                <div style="background: #fafbfc; padding: 25px; margin-bottom: 20px; border-radius: 2px; border-left: 4px solid #e74c3c;">
+                    <h3 style="margin-top: 0; color: #2c3e50;">Unia Europejska</h3>
+                    <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center; margin-top: 15px;">
+                        <div>
+                            <div style="font-weight: 600; color: #e74c3c; margin-bottom: 8px;">BRAUN</div>
+                            <div style="font-size: 1.1em; font-weight: 600;">Polexit</div>
+                            <div style="font-size: 0.9em; color: #7f8c8d; margin-top: 5px;">Całkowite wyjście z Unii Europejskiej, odzyskanie suwerenności, własna polityka zagraniczna</div>
+                        </div>
+                        <div style="width: 2px; height: 80px; background: #ecf0f1;"></div>
+                        <div>
+                            <div style="font-weight: 600; color: #3498db; margin-bottom: 8px;">SENYSZYN</div>
+                            <div style="font-size: 1.1em; font-weight: 600;">Głęboka integracja</div>
+                            <div style="font-size: 0.9em; color: #7f8c8d; margin-top: 5px;">Przyjęcie euro, wspólna polityka obronna, silniejsza pozycja w strukturach UE</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #fafbfc; padding: 25px; margin-bottom: 20px; border-radius: 2px; border-left: 4px solid #9b59b6;">
+                    <h3 style="margin-top: 0; color: #2c3e50;">Kościół i państwo</h3>
+                    <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center; margin-top: 15px;">
+                        <div>
+                            <div style="font-weight: 600; color: #e74c3c; margin-bottom: 8px;">BRAUN</div>
+                            <div style="font-size: 1.1em; font-weight: 600;">Intronizacja Chrystusa</div>
+                            <div style="font-size: 0.9em; color: #7f8c8d; margin-top: 5px;">Formalna intronizacja jako Króla Polski, silna rola Kościoła w życiu publicznym</div>
+                        </div>
+                        <div style="width: 2px; height: 80px; background: #ecf0f1;"></div>
+                        <div>
+                            <div style="font-weight: 600; color: #3498db; margin-bottom: 8px;">SENYSZYN</div>
+                            <div style="font-size: 1.1em; font-weight: 600;">Świeckość państwa</div>
+                            <div style="font-size: 0.9em; color: #7f8c8d; margin-top: 5px;">Całkowity rozdział, zniesienie przywilejów, likwidacja kaplicy w Pałacu Prezydenckim</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #fafbfc; padding: 25px; margin-bottom: 20px; border-radius: 2px; border-left: 4px solid #e67e22;">
+                    <h3 style="margin-top: 0; color: #2c3e50;">Prawa reprodukcyjne</h3>
+                    <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center; margin-top: 15px;">
+                        <div>
+                            <div style="font-weight: 600; color: #e74c3c; margin-bottom: 8px;">BRAUN</div>
+                            <div style="font-size: 1.1em; font-weight: 600;">Całkowity zakaz</div>
+                            <div style="font-size: 0.9em; color: #7f8c8d; margin-top: 5px;">Zakaz aborcji bez wyjątków, zakaz in vitro jako metody "niegodziwej"</div>
+                        </div>
+                        <div style="width: 2px; height: 80px; background: #ecf0f1;"></div>
+                        <div>
+                            <div style="font-weight: 600; color: #3498db; margin-bottom: 8px;">SENYSZYN</div>
+                            <div style="font-size: 1.1em; font-weight: 600;">Prawo wyboru</div>
+                            <div style="font-size: 0.9em; color: #7f8c8d; margin-top: 5px;">Kobieta decyduje o przerwaniu ciąży, szeroki dostęp do edukacji seksualnej</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #fafbfc; padding: 25px; border-radius: 2px; border-left: 4px solid #16a085;">
+                    <h3 style="margin-top: 0; color: #2c3e50;">Prawa mniejszości seksualnych</h3>
+                    <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center; margin-top: 15px;">
+                        <div>
+                            <div style="font-weight: 600; color: #e74c3c; margin-bottom: 8px;">BRAUN</div>
+                            <div style="font-size: 1.1em; font-weight: 600;">Zakaz "propagandy"</div>
+                            <div style="font-size: 0.9em; color: #7f8c8d; margin-top: 5px;">Sprzeciw wobec parad równości, zakaz "ideologii LGBT" w szkołach</div>
+                        </div>
+                        <div style="width: 2px; height: 80px; background: #ecf0f1;"></div>
+                        <div>
+                            <div style="font-weight: 600; color: #3498db; margin-bottom: 8px;">SENYSZYN</div>
+                            <div style="font-size: 1.1em; font-weight: 600;">Pełne równouprawnienie</div>
+                            <div style="font-size: 0.9em; color: #7f8c8d; margin-top: 5px;">Ochrona praw osób LGBT, walka z dyskryminacją, uznanie różnorodności</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="process" class="page">
+            <h1>Przebieg pracy nad projektem</h1>
+
+            <h2>Harmonogram działań</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-date">10 października - 20 listopada 2025</div>
+                <div><strong>Analiza programów wyborczych</strong></div>
+                <p>Przeczytałem artykuły prasowe opisujące programy polityczne obu kandydatów. Z artykułu Bankier.pl dowiedziałem się, że Braun stawia na obronę "zasad katolickich" oraz hasła antykomunistyczne, a także chce powstrzymać "ukrainizację Polski". Z kolei Senyszyn postuluje rozdział Kościoła od państwa, legalizację aborcji i zwiększenie praw osób LGBT. Zanotowałem te różnice w tabeli porównawczej.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Październik 2025</div>
+                <div><strong>Oglądanie debat telewizyjnych</strong></div>
+                <p>Obejrzałem fragmenty debat przedwyborczych, zwracając uwagę na styl wypowiedzi i argumentację. Braun używał mocnych sloganów ("Precz z komuną, precz z eurokomuną..."), natomiast Senyszyn akcentowała kwestie społeczne i ekonomiczne.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Październik 2025</div>
+                <div><strong>Tworzenie wykresu poparcia</strong></div>
+                <p>Na podstawie sondażu IBRiS przygotowałem wykres słupkowy porównujący poziom zaufania społecznego. Dane pokazały, że Braun ma 5,9% zaufania, a Senyszyn - 17,9%.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Listopad 2025</div>
+                <div><strong>Dyskusja klasowa</strong></div>
+                <p>Podczas zajęć przedstawiłem główne różnice pomiędzy politykami. Zadawałem pytania i analizowałem argumenty kolegów, co pomogło mi dopracować notatki.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Listopad 2025</div>
+                <div><strong>Sporządzenie tabeli porównawczej</strong></div>
+                <p>Opracowałem tabelę zestawiającą dane biograficzne i programowe obu polityków. Umieściłem tam doświadczenie parlamentarne, poglądy ideologiczne i kluczowe postulaty.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Listopad 2025</div>
+                <div><strong>Zbieranie materiałów dodatkowych</strong></div>
+                <p>Odnalazłem zdjęcia na licencjach publicznych oraz artykuły prasowe, aby wzbogacić portfolio.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">20 listopada 2025</div>
+                <div><strong>Redakcja końcowa</strong></div>
+                <p>Połączyłem wszystkie elementy w spójne portfolio i sprawdziłem poprawność językową, logiczną i estetyczną.</p>
+            </div>
+
+        </div>
+
+        <div id="reflection" class="page">
+            <h1>Refleksje i wnioski</h1>
+
+            <h2>Odkrycia podczas pracy</h2>
+            <p>Praca uświadomiła mi, jak odmienne mogą być poglądy dwóch posłów. Braun koncentruje się na wartościach nacjonalistycznych i konserwatywnych, często używając ostrych sformułowań programowych. Senyszyn proponuje rozwiązania liberalno-lewicowe, skupiając się na prawach człowieka, świeckości państwa i kwestiach społecznych. Czytanie źródeł pomogło mi dostrzec te kontrasty.</p>
+
+            <h2>Rozwinięte umiejętności</h2>
+            <p>W trakcie pracy rozwinąłem umiejętność analizy źródeł i wyboru wiarygodnych informacji. Z czasem zacząłem pisać bardziej obiektywnie, unikając ocen i skupiając się na faktach. Wykonanie wykresu i tabeli pomogło mi uporządkować wiedzę i zobaczyć różnice w formie graficznej.</p>
+
+            <div class="info-box">
+                <h3>Największe wyzwanie</h3>
+                <p>Najtrudniejsze było zachowanie obiektywizmu przy opisywaniu tak skrajnie różnych poglądów. Musiałem świadomie kontrolować własne preferencje i przedstawiać fakty bez wartościowania. Wymagało to wielokrotnej weryfikacji formułowanych zdań i unikania języka sugerującego ocenę.</p>
+            </div>
+
+            <h2>Główne różnice między kandydatami</h2>
+            
+            <h3>Ideologia</h3>
+            <p>Braun reprezentuje skrajną prawicę z elementami nacjonalizmu i monarchizmu, podczas gdy Senyszyn prezentuje lewicowy liberalizm społeczny. Ta fundamentalna różnica przejawia się we wszystkich obszarach ich programów.</p>
+
+            <h3>Stosunek do Unii Europejskiej</h3>
+            <p>Braun dąży do Polexitu i krytykuje UE jako "eurokołchoz", natomiast Senyszyn popiera głębszą integrację europejską i przyjęcie euro. To jedna z najbardziej wyrazistych różnic między kandydatami.</p>
+
+            <h3>Kwestie światopoglądowe</h3>
+            <p>Braun opowiada się za całkowitym zakazem aborcji, wzmocnieniem roli Kościoła i sprzeciwem wobec praw LGBT. Senyszyn postuluje prawo do aborcji, rozdział państwa od Kościoła i pełne równouprawnienie mniejszości seksualnych.</p>
+
+            <h3>Podejście do gospodarki</h3>
+            <p>Braun preferuje wolny rynek z minimalną rolą państwa (poza obszarami strategicznymi), podczas gdy Senyszyn chce większej redystrybucji i inwestycji publicznych w edukację oraz zdrowie.</p>
+
+            <h2>Co projekt dał mi osobiście</h2>
+            <p>Projekt nauczył mnie, że w demokracji istnieje miejsce dla bardzo różnych poglądów. Zrozumiałem również, jak ważne jest weryfikowanie informacji z wielu źródeł i unikanie jednoznacznych ocen bez głębszej analizy. Praca nad portfolio rozwinęła moją umiejętność krytycznego myślenia i obiektywnego przedstawiania informacji.</p>
+        </div>
+
+        <div id="summary" class="page">
+            <h1>Podsumowanie</h1>
+
+            <h2>Realizacja celów</h2>
+            <p>Samodzielna praca nad portfolio pozwoliła mi poszerzyć wiedzę o polityce i poglądach kandydatów. Zrealizowałem założone cele, ucząc się analizy, selekcji informacji i obiektywnego porównywania danych. Pracę wykonywałem systematycznie od początku października do 20 listopada.</p>
+
+            <h2>Ocena efektu końcowego</h2>
+            <p>Uważam, że efekt końcowy jest przejrzysty i estetyczny. Szczególnie dumny jestem z:</p>
+            <ul>
+                <li>Zachowania obiektywizmu przy opisywaniu przeciwstawnych poglądów</li>
+                <li>Stworzenia przejrzystych wizualizacji danych</li>
+                <li>Systematycznego podejścia do pracy</li>
+                <li>Wykorzystania różnorodnych źródeł informacji</li>
+            </ul>
+
+            <h2>Główne wnioski</h2>
+            <p>Grzegorz Braun i Joanna Senyszyn reprezentują diametralnie różne wizje Polski. Braun dąży do narodowego, konserwatywnego modelu państwa z silną rolą Kościoła i surowym podejściem do prawa. Senyszyn prezentuje postępowe, lewicowe spojrzenie, zakładające współpracę z Unią Europejską, wspieranie najsłabszych i liberalizację obyczajową.</p>
+
+            <div class="info-box">
+                <h3>Kluczowa obserwacja</h3>
+                <p>Porównanie programów pokazuje, że polskie społeczeństwo ma dostęp do różnorodnych alternatyw wyborczych. Wyborcy mogą głosować na polityków utrzymujących obecny kierunek rozwoju lub na tych, którzy obiecują radykalne zmiany. Ta różnorodność jest typowa dla demokracji i pozwala obywatelom wyrazić swoje preferencje polityczne.</p>
+            </div>
+
+            <h2>Plany na przyszłość</h2>
+            <p>W kolejnych projektach chciałbym:</p>
+            <ul>
+                <li>Jeszcze bardziej pogłębiać analizę kontrargumentów</li>
+                <li>Planować pracę z większym wyprzedzeniem</li>
+                <li>Rozszerzyć źródła o wywiady bezpośrednie lub nagrania wystąpień publicznych</li>
+                <li>Analizować nie tylko programy, ale też ich faktyczną realizację</li>
+                <li>Porównywać większą liczbę kandydatów jednocześnie</li>
+            </ul>
+
+            <h2>Znaczenie projektu</h2>
+            <p>Portfolio obywatelskie to nie tylko wymóg edukacyjny, ale przede wszystkim narzędzie rozwoju świadomości obywatelskiej. Praca nad tym projektem pokazała mi, jak ważne jest aktywne uczestnictwo w życiu publicznym i jak wiele można się nauczyć poprzez samodzielną analizę programów politycznych.</p>
+
+            <p style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ecf0f1; color: #7f8c8d;">Projekt zrealizowany w okresie 10.10 - 20.11.2025 | Praca wykonana samodzielnie</p>
+        </div>
+        <div id="sources" class="page">
+        <h1>Źródła</h1>
+        <p class="subtitle">Wykaz materiałów wykorzystanych w projekcie</p>
+
+        <h2>Źródła internetowe</h2>
+        
+        <h3>Źródła główne - Wikipedia</h3>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li class="source-item" style="border-left: 3px solid #e74c3c;">
+                <div class="source-title">Grzegorz Braun – Wikipedia, wolna encyklopedia</div>
+                <div class="source-description">Biografia, kariera polityczna, poglądy ideologiczne</div>
+                <a href="https://pl.wikipedia.org/wiki/Grzegorz_Braun" target="_blank" class="source-link">https://pl.wikipedia.org/wiki/Grzegorz_Braun</a>
+            </li>
+            <li class="source-item" style="border-left: 3px solid #3498db;">
+                <div class="source-title">Joanna Senyszyn – Wikipedia, wolna encyklopedia</div>
+                <div class="source-description">Biografia, kariera polityczna, działalność społeczna</div>
+                <a href="https://pl.wikipedia.org/wiki/Joanna_Senyszyn" target="_blank" class="source-link">https://pl.wikipedia.org/wiki/Joanna_Senyszyn</a>
+            </li>
+        </ul>
+
+        <h3>Programy wyborcze</h3>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li class="source-item" style="border-left: 3px solid #e74c3c;">
+                <div class="source-title">Program Wyborczy – Braun 2025</div>
+                <div class="source-description">Oficjalny program wyborczy Grzegorza Brauna</div>
+                <a href="https://www.braun2025.pl/program-wyborczy/" target="_blank" class="source-link">https://www.braun2025.pl/program-wyborczy/</a>
+            </li>
+            <li class="source-item" style="border-left: 3px solid #3498db;">
+                <div class="source-title">Program Joanny Senyszyn 2025</div>
+                <div class="source-description">Tygodnik "Wszystko co Najważniejsze"</div>
+                <a href="https://wszystkoconajwazniejsze.pl/pepites/program-joanny-senyszyn-2025-wybory-prezydenckie-joanna-senyszyn/" target="_blank" class="source-link">https://wszystkoconajwazniejsze.pl/...</a>
+            </li>
+        </ul>
+
+        <h3>Artykuły prasowe i portale informacyjne</h3>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li class="source-item" style="border-left: 3px solid #95a5a6;">
+                <div class="source-title">Kandydatka na prezydenta 2025: Joanna Senyszyn</div>
+                <div class="source-description">Infor.pl - partia, program, biografia</div>
+                <a href="https://www.infor.pl/prawo/wybory/prezydenckie/6935697,kandydatka-na-prezydenta-2025-joanna-senyszyn-partia-program-wiek.html" target="_blank" class="source-link">https://www.infor.pl/prawo/wybory/prezydenckie/...</a>
+            </li>
+            <li class="source-item" style="border-left: 3px solid #95a5a6;">
+                <div class="source-title">Wybory prezydenckie: Joanna Senyszyn dołącza do wyścigu</div>
+                <div class="source-description">Onet Wiadomości</div>
+                <a href="https://wiadomosci.onet.pl/wybory/wybory-prezydenckie/wybory-prezydenckie-joanna-senyszyn-dolacza-do-wyscigu/w99p4bj" target="_blank" class="source-link">https://wiadomosci.onet.pl/wybory/...</a>
+            </li>
+            <li class="source-item" style="border-left: 3px solid #95a5a6;">
+                <div class="source-title">Edukacja po wyborach - co planują kandydaci</div>
+                <div class="source-description">Baba od polskiego</div>
+                <a href="https://babaodpolskiego.pl/edukacja-po-wyborach-co-planuja-kandydaci/" target="_blank" class="source-link">https://babaodpolskiego.pl/edukacja-po-wyborach-co-planuja-kandydaci/</a>
+            </li>
+            <li class="source-item" style="border-left: 3px solid #95a5a6;">
+                <div class="source-title">Artykuły Bankier.pl</div>
+                <div class="source-description">Analizy programów wyborczych kandydatów</div>
+            </li>
+            <li class="source-item" style="border-left: 3px solid #95a5a6;">
+                <div class="source-title">Portal TVN24</div>
+                <div class="source-description">Wyniki sondażu zaufania IBRiS</div>
+            </li>
+        </ul>
+
+        <h2>Materiały wizualne</h2>
+        <ul>
+            <li>Własne wykresy i wizualizacje danych</li>
+            <li>Dane z Google Trends dotyczące zainteresowania kandydatami</li>
+        </ul>
+
+        <h2>Inne źródła</h2>
+        <ul>
+            <li>Oficjalne strony programów wyborczych kandydatów</li>
+            <li>Tygodnik "Wszystko co Najważniejsze"</li>
+            <li>Debaty przedwyborcze - TVP, TVN, Polsat</li>
+            <li>Materiały informacyjne PKW (Państwowa Komisja Wyborcza)</li>
+        </ul>
+
+      
+        <p style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ecf0f1; color: #7f8c8d; text-align: center;">
+            Portfolio obywatelskie - Projekt z edukacji obywatelskiej 2025
+        </p>
+
+        </div>
+    </div>
+
+    <footer>
+        Portfolio obywatelskie - Projekt z edukacji obywatelskiej 2025
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
